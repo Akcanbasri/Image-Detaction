@@ -16,7 +16,7 @@ This project includes a backend built with Flask for car detection and license p
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <[your-repo-url](https://github.com/Akcanbasri/Image-Detaction)>
+git clone <https://github.com/Akcanbasri/Image-Detaction>
 cd <Image-Detaction>
 ```
 
