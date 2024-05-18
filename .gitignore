@@ -1,0 +1,10 @@
+
+#ignore data folder and its contents
+MultiDetaction/images/
+MultiDetaction/labels/
+
+# ignore models folder and its contents
+models/
+
+#igrone venv folder and its contents
+venv/
