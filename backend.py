@@ -160,40 +160,6 @@ def predict_image():
     return send_file(io_buf, mimetype="image/png")
 
 
-@app.route("/detect_plate", methods=["POST"])
-def predict():
-    if "image" not in request.files:
-        return jsonify({"error": "No image provided"}), 400
-
-    image_file = request.files["image"]
-    image = Image.open(io.BytesIO(image_file.read())).convert("RGB")
-    original_width, original_height = image.size
-
-    x1, y1, x2, y2 = get_plate_coordinates(image, original_width, original_height)
-
-    # Adjust the coordinates slightly
-    x_offset = 30  # Right offset in pixels
-    y_offset = 30  # Downward offset in pixels
-
-    x1 += x_offset
-    x2 += x_offset
-    y1 += y_offset
-    y2 += y_offset
-
-    # Load the original image
-    original_image = np.array(image)
-    img = cv2.cvtColor(original_image, cv2.COLOR_RGB2BGR)
-
-    # Draw rectangle using coordinates
-    cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-    # Save the result as a file
-    is_success, buffer = cv2.imencode(".png", img)
-    io_buf = io.BytesIO(buffer)
-
-    return send_file(io_buf, mimetype="image/png")
-
-
 @app.route("/read_plate", methods=["POST"])
 def read_plate():
     if "file" not in request.files:

@@ -6,5 +6,5 @@ MultiDetaction/labels/
 # ignore models folder and its contents
 models/
 
-#igrone venv folder and its contents
+#ignore venv folder and its contents
 venv/
