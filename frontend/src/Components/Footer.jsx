@@ -11,10 +11,9 @@ function Footer() {
         <div className='ml-20 mt-4'>
           <h1 className='font-montserrat'>Quick Links</h1>
           <div className='flex-col'>
-          <a href="#" className='text-xs'>Home</a>
-          <a href="#" className='text-xs'>About</a>
-          <a href="#" className='text-xs'>Services</a>
-          <a href="#" className='text-xs'>Contact</a>
+            <h1 className='text-xs'>About</h1>
+            <h1 className='text-xs'>Contact</h1>
+            <h1 className='text-xs'>Price</h1>
           </div>
         </div>
         <div className='ml-20 mt-4'>
